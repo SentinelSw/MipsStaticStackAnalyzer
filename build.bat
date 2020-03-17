@@ -1,0 +1,1 @@
+gcc -O3 -ostaticStackAnalyzer.exe staticStackAnalyzer.c
