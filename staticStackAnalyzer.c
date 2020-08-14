@@ -358,8 +358,8 @@ int main (int argc, char** argv)
     {
         printf("Usage: %s [-s<sorting>] [-n<number>] <input file>\n"
                 "Options:\n"
-                "  -s<sorting>   Sorting of results, d=Deepest o=Own\n"
-                "  -n<number>    The number of entries printed, -1 for all\n"
+                "  -s<sorting>   Sorting of results, d=Deepest o=Own (default is %c)\n"
+                "  -n<number>    The number of entries printed, -1 for all (default is %i)\n"
                 "  <input file>  The ELF file to parse\n"
                 "\n"
                 "Report is printed as markdown table.\n"
@@ -369,7 +369,9 @@ int main (int argc, char** argv)
                 "  Deepest:        The maximum stack usage of this function and all called function.\n"
                 "  Indirect Calls: This function uses function pointers, so the deepest stack usage cannot be determined.\n"
                 "\n",
-                argv[0]);
+                argv[0],
+                sorting,
+                printcount);
         return -1;
     }
 

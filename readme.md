@@ -50,8 +50,12 @@ Help! The program does not work for me!
 ---------------------------------------
 
 Here a list of ideas, how you can help yoursef:
-- Check ::openDisassembly if the path to your xc32-objdump.exe is correct. The installation folder and/or the version number might be different.
-- Check where your code is linked to. Change the section pattern, if your output section is not .text or .text.* (currently in ::main and ::findNextTextSection, this part of code needs refactoring)
+- "xxx is not recognized as an internal or external command, ..."
+  * Check ::openDisassembly if the path to your xc32-objdump.exe is correct. The installation folder and/or the version number might be different.
+- The result list is empty or way too short
+  * Check where your code is linked to. Change the section pattern, if your output section is not .text or .text.* (currently in ::main and ::findNextTextSection, this part of code needs refactoring)
+  * Do not strip symbol information from final ELF file by linker. These are needed to determine start and end of functions
+  * Without any parameters the result output is limited (see ::main or read help message for actual default limit). Use parameter -n-1 for unlimited result output.
 
 more to follow...
 
